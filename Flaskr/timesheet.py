@@ -92,35 +92,18 @@ def update(id):
     entry = get_entry(id)
 
     if request.method == 'POST':
-        first_name = request.form['first_name']
-        last_name = request.form['last_name']
-        date_of_birth = request.form['date_of_birth']
-        address = request.form['address']
-        phone = request.form['phone']
-        project = request.form['project']
-        hours = request.form['hours']
+        first_name = request.form.get('first_name', '')
+        last_name = request.form.get('last_name', '')
+        date_of_birth = request.form.get('date_of_birth', '')
+        address = request.form.get('address', '')
+        phone = request.form.get('phone', '')
+        project = request.form.get('project', '')
+        hours = request.form.get('hours', '')
         error = None
-
-        if not first_name:
-            error = 'First name is required.'
 
         if not last_name:
             error = 'Last name is required.'
 
-        if not date_of_birth:
-            error = 'Date of birth is required.'
-
-        if not address:
-            error = 'Address is required.'
-
-        if not phone:
-            error = 'Phone is required.'
-
-        if not project:
-            error = 'Project name is required.'
-
-        if not hours:
-            error = 'Hours are required.'
 
         if error is not None:
             flash(error)

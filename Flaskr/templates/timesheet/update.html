@@ -8,25 +8,25 @@
   <form method="post">
     <label for="first_name">First Name</label>
     <input name="first_name " id="first_name"
-      value="{{ request.form['first_name'] or post['first_name'] }}" required>
+      value="{{ request.form['first_name'] or entry['first_name'] }}" required>
     <label for="last_name">Last Name</label>
     <input name="last_name" id="last_name"
-      value="{{ request.form['last_name'] or post['last_name'] }}" required>
+      value="{{ request.form['last_name'] or entry['last_name'] }}" required>
     <label for="date_of_birth">Date of Birth (mmddyyyy)</label>
     <input name="date_of_birth" id="date_of_birth"
-      value="{{ request.form['date_of_birth'] or post['date_of_birth'] }}" required>
+      value="{{ request.form['date_of_birth'] or entry['date_of_birth'] }}" required>
     <label for="address">Address</label>
     <input name="address" id="address"
-      value="{{ request.form['address'] or post['address'] }}" required>
+      value="{{ request.form['address'] or entry['address'] }}" required>
     <label for="phone">Phone</label>
     <input name="phone" id="phone"
-      value="{{ request.form['phone'] or post['phone'] }}" required>
+      value="{{ request.form['phone'] or entry['phone'] }}" required>
     <label for="project">Project</label>
     <input name="project" id="project"
-      value="{{ request.form['project'] or post['project'] }}" required>
+      value="{{ request.form['project'] or entry['project'] }}" required>
     <label for="hours">Hours</label>
     <input name="hours" id="hours"
-      value="{{ request.form['hours'] or post['hours'] }}" required>
+      value="{{ request.form['hours'] or entry['hours'] }}" required>
     <input type="submit" value="Save">
   </form>
   <hr>
