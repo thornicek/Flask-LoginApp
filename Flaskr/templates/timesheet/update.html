@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Edit "{{ entry['last_name'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="first_name">First Name</label>
+    <input name="first_name " id="first_name"
+      value="{{ request.form['first_name'] or post['first_name'] }}" required>
+    <label for="last_name">Last Name</label>
+    <input name="last_name" id="last_name"
+      value="{{ request.form['last_name'] or post['last_name'] }}" required>
+    <label for="date_of_birth">Date of Birth (mmddyyyy)</label>
+    <input name="date_of_birth" id="date_of_birth"
+      value="{{ request.form['date_of_birth'] or post['date_of_birth'] }}" required>
+    <label for="address">Address</label>
+    <input name="address" id="address"
+      value="{{ request.form['address'] or post['address'] }}" required>
+    <label for="phone">Phone</label>
+    <input name="phone" id="phone"
+      value="{{ request.form['phone'] or post['phone'] }}" required>
+    <label for="project">Project</label>
+    <input name="project" id="project"
+      value="{{ request.form['project'] or post['project'] }}" required>
+    <label for="hours">Hours</label>
+    <input name="hours" id="hours"
+      value="{{ request.form['hours'] or post['hours'] }}" required>
+    <input type="submit" value="Save">
+  </form>
+  <hr>
+  <form action="{{ url_for('timesheet.delete', id=entry['id']) }}" method="post">
+    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+  </form>
+{% endblock %}
