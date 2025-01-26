@@ -12,7 +12,7 @@ CREATE TABLE entry (
   employee_id INTEGER NOT NULL,
   first_name TEXT NOT NULL,
   last_name TEXT NOT NULL,
-  date_of_birth DATE NOT NULL,
+  date_of_birth INT NOT NULL,
   address TEXT NOT NULL,
   phone INTEGER NOT NULL,
   project TEXT NOT NULL,

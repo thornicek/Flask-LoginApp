@@ -19,9 +19,7 @@
           <h1>{{ entry['phone'] }}</h1>
           <h1>{{ entry['project'] }}</h1>
         </div>
-        {% if g.user['id'] == post['employee_id'] %}
-          <a class="action" href="{{ url_for('timesheet.update', id=entry['id']) }}">Edit</a>
-        {% endif %}
+
       </header>
       <p class="body">{{ entry['hours'] }}</p>
     </article>
