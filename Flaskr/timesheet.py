@@ -18,3 +18,52 @@ def index():
         ' ORDER BY last_name ASC'
     ).fetchall()
     return render_template('timesheet/index.html', entries=entries)
+
+
+@bp.route('/create', methods=('GET', 'POST'))
+@login_required
+def create():
+    if request.method == 'POST':
+        first_name = request.form['first_name']
+        last_name = request.form['last_name']
+        date_of_birth = request.form['date_of_birth']
+        address = request.form['address']
+        phone = request.form['phone']
+        project = request.form['project']
+        hours = request.form['hours']
+        error = None
+
+        if not first_name:
+            error = 'First name is required.'
+
+        if not last_name:
+            error = 'Last name is required.'
+
+        if not date_of_birth:
+            error = 'Date of birth is required.'
+
+        if not address:
+            error = 'Address is required.'
+
+        if not phone:
+            error = 'Phone is required.'
+
+        if not project:
+            error = 'Project name is required.'
+
+        if not hours:
+            error = 'Hours are required.'
+
+        if error is not None:
+            flash(error)
+        else:
+            db = get_db()
+            db.execute(
+                'INSERT INTO entry (first_name, last_name, date_of_birth, address, phone, project, hours, employee_id)'
+                ' VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+                (first_name,last_name,date_of_birth,address, phone, project, hours, g.user['id'])
+            )
+            db.commit()
+            return redirect(url_for('timesheet.index'))
+
+    return render_template('timesheet/create.html')

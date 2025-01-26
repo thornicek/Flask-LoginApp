@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="971f5c39-34da-46da-b1df-ada7e0d6934a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Flaskr/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flaskr/static/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flaskr/templates/auth/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flaskr/templates/auth/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flaskr/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flaskr/templates/timesheet/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flaskr/timesheet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flaskr/templates/timesheet/create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flaskr/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flaskr/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flaskr/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flaskr/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flaskr/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Flaskr/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flaskr/templates/timesheet/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Flaskr/templates/timesheet/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flaskr/timesheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flaskr/timesheet.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
