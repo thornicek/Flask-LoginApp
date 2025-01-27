@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="971f5c39-34da-46da-b1df-ada7e0d6934a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flaskr/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flaskr/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flaskr/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Flaskr/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flaskr/templates/timesheet/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Flaskr/templates/timesheet/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flaskr/timesheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flaskr/timesheet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/instance/flaskr.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/instance/flaskr.sqlite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

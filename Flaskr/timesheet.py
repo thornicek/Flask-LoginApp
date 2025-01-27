@@ -12,12 +12,29 @@ bp = Blueprint('timesheet', __name__)
 @bp.route('/')
 def index():
     db = get_db()
-    entries = db.execute(
-        'SELECT e.id, first_name, last_name, date_of_birth, address, phone, project, hours, employee_id, username'
-        ' FROM entry e JOIN user u ON e.employee_id = u.id'
-        ' ORDER BY last_name ASC'
-    ).fetchall()
-    return render_template('timesheet/index.html', entries=entries)
+    if g.user is None:
+        return redirect(url_for('auth.login'))
+    if g.user['role'] == 'admin':
+        entries = db.execute(
+            'SELECT e.id, first_name, last_name, date_of_birth, address, phone, project, hours, employee_id, username'
+            ' FROM entry e JOIN user u ON e.employee_id = u.id'
+            ' ORDER BY last_name ASC'
+        ).fetchall()
+        users = db.execute(
+            'SELECT id, username, role FROM user ORDER BY username ASC'
+        ).fetchall()
+    else:
+        entries = db.execute(
+            'SELECT e.id, first_name, last_name, date_of_birth, address, phone, project, hours, employee_id, username'
+            ' FROM entry e JOIN user u ON e.employee_id = u.id'
+            ' WHERE employee_id = ?'
+            ' ORDER BY last_name ASC',
+            (g.user['id'],)
+        ).fetchall()
+        users = None  # Non-admins don't see the user list
+
+    return render_template('timesheet/index.html', entries=entries, users=users)
+
 
 
 @bp.route('/create', methods=('GET', 'POST'))

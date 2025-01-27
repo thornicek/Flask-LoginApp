@@ -29,4 +29,23 @@
       <hr>
     {% endif %}
   {% endfor %}
+
+
+  {% if g.user['role'] == 'admin' %}
+    <section>
+      <h2>All Users</h2>
+      {% for user in users %}
+        <article class="post">
+          <header>
+            <div>
+              <h1>User ID: {{ user['id'] }}</h1>
+              <h1>Username: {{ user['username'] }}</h1>
+              <h1>Role: {{ user['role'] }}</h1>
+            </div>
+          </header>
+          <hr>
+        </article>
+      {% endfor %}
+    </section>
+  {% endif %}
 {% endblock %}
